@@ -1,0 +1,342 @@
+:root {
+    
+    --midnight-blue: #1F2A44;
+    --olive-green: #76885B;
+    --champagne-gold: #E5C185;
+    --linen: #F8F4EC;
+    --dark-charcoal: #2B2B2B;
+    .gallery {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
+    --soft-white: #FAF9F6;
+
+    --font: url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+    --font-fam: Playfair Display;
+
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;     
+    justify-content: flex-start;  
+    text-align: center;      
+    gap: 1.5rem;
+    min-height: 100vh;
+    padding: 1.5rem;
+    background: var(--linen);
+    color: var(--dark-charcoal);
+    font-family: "Playfair Display", serif;
+    line-height: 1.6;
+}
+
+main, header, footer, section {
+    width: min(1200px, 100%);
+    max-width: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.gallery figure, figure {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 0.5rem;
+    box-shadow: 0 8px 20px rgba(31,42,68,0.06);
+    overflow: hidden;
+}
+
+.gallery figure img, figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+figcaption {
+    text-align: center;
+    margin-top: 0.5rem;
+    color: var(--dark-charcoal);
+    font-size: 0.95rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+p, h1, h2, h3, h4 {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+section + section {
+    border-top: 4px solid var(--champagne-gold);
+    margin-top: 1.5rem;
+    padding-top: 1.25rem; 
+}
+
+@media (max-width: 599px) {
+    section + section {
+        border-top-width: 3px;
+        margin-top: 1rem;
+        padding-top: 1rem;
+    }
+}
+
+header, footer {
+    width: 100%;
+    background: var(--midnight-blue);
+    color: var(--soft-white);
+    padding: 1.25rem 0;
+}
+
+header > * , footer > * {
+    width: min(900px, 100%);
+    margin: 0 auto;
+}
+
+.ghost-box {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 1rem 0 0 0;
+    padding: 0.85rem 1rem;
+    border: 1px solid rgba(0,0,0,0.06);
+    background: var(--olive-green); 
+    color: var(--soft-white);
+    border-radius: 6px;
+    text-align: center;
+    display: block;
+    font-weight: 700; 
+    font-size: 1.05rem;
+    line-height: 1.2;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+
+@media (max-width: 420px) {
+    .ghost-box {
+        padding-left: 0.6rem;
+        padding-right: 0.6rem;
+        font-size: 0.95rem;
+    }
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+nav.top-nav {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    background: var(--champagne-gold);
+    padding: 0.6rem 0; 
+    border-radius: 0; 
+    margin-top: 0.25rem;
+    display: block;
+}
+
+nav.top-nav ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: min(1000px, 95%);
+}
+
+nav.top-nav a {
+    display: block;
+    text-decoration: none;
+    color: var(--midnight-blue);
+    background: transparent;
+    padding: 0.45rem 0.6rem;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+nav.top-nav a:hover, nav.top-nav a:focus {
+    background: rgba(0,0,0,0.06);
+}
+
+main {
+    background: var(--soft-white);
+    color: var(--dark-charcoal);
+    padding: 2rem;
+    border-radius: 8px;
+    max-height: calc(100vh - 8rem);
+    overflow: auto;
+}
+
+.offerings-list article {
+    background: var(--olive-green);
+    color: var(--soft-white);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(31,42,68,0.08);
+}
+
+.offerings-list article h3 {
+    margin-top: 0;
+}
+
+.offerings-list article ul {
+    margin: 0.5rem 0 0 1rem;
+}
+
+.offerings-list {
+    gap: 1rem;
+}
+
+@media (max-width: 599px) {
+    body {
+        padding: 1rem;
+        font-size: 15px;
+        gap: 1rem;
+    }
+
+    header img {
+        max-width: 100px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav.top-nav {
+        width: 100%;
+        padding: 0.5rem 0;
+        border-radius: 6px;
+    }
+
+    nav.top-nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        align-items: center;
+    }
+
+    main {
+        width: calc(100% - 2rem);
+        padding: 1rem;
+        border-radius: 6px;
+    }
+
+    .gallery {
+        display: block;
+    }
+
+    .gallery figure {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (min-width: 600px) {
+    body {
+        padding: 1.5rem;
+        font-size: 16px;
+    }
+
+    header img {
+        max-width: 140px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav.top-nav {
+        width: min(520px, 90%);
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(320px, 1fr));
+        gap: 1rem;
+    }
+}
+
+@media (min-width: 900px) {
+    body {
+        padding: 2rem;
+        font-size: 17px;
+    }
+
+    header img {
+        max-width: 160px;
+    }
+
+    header h1 {
+        font-size: 2.4rem;
+    }
+
+    nav.top-nav {
+        width: min(600px, 95%);
+    }
+
+    .offerings-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(520px, 1fr));
+        gap: 1rem;
+        align-items: start;
+    }
+
+    .offerings-list article:nth-child(3) {
+        grid-column: 1 / -1;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(3, minmax(420px, 1fr));
+        gap: 1rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    body {
+        padding: 3rem;
+        font-size: 18px;
+    }
+
+    header img {
+        max-width: 180px;
+    }
+
+    header h1 {
+        font-size: 3rem;
+    }
+
+    main {
+        width: min(1200px, 90%);
+    }
+
+    .gallery {
+        grid-template-columns: repeat(4, minmax(360px, 1fr));
+        gap: 1rem;
+    }
+
+    
+}
+
